@@ -1,0 +1,28 @@
+module.exports = {
+  // Định nghĩa môi trường chạy code (Node.js và trình duyệt)
+  env: {
+    browser: true,
+    commonjs: true,
+    es2021: true,
+    node: true,
+  },
+  // Sử dụng cấu hình tiêu chuẩn của ESLint
+  extends: ['eslint:recommended'],
+  parserOptions: {
+    // Cho phép sử dụng cú pháp ES modules
+    sourceType: 'module',
+    // Phiên bản ECMAScript mới nhất
+    ecmaVersion: 'latest',
+  },
+  // Thiết lập các quy tắc kiểm tra tùy chỉnh
+  rules: {
+    // Buộc phải sử dụng dấu ba chấm lửng cho khai báo biến
+    'semi': ['error', 'always'],
+    // Không cho phép sử dụng console.log trong code cuối cùng (chỉ dùng trong dev)
+    'no-console': 'warn',
+    // Cảnh báo nếu có biến được khai báo nhưng không được sử dụng
+    'no-unused-vars': 'warn',
+    // Yêu cầu sử dụng dấu nháy đơn
+    'quotes': ['error', 'single', { 'allowTemplateLiterals': true }],
+  },
+};
